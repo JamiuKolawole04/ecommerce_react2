@@ -26,7 +26,7 @@ const Login = () => {
                 let date = new Date();
                 date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
                 const expires = `expires=${date.toUTCString()}`;
-                document.cookie = `${cookieName}=${cookieValue};path=https://api-bane-ecommerce.herokuapp.com/user/refresh_token; samesite=none;secure;${expires};httpOnly`;
+                document.cookie = `${cookieName}=${cookieValue};path=https://api-bane-ecommerce.herokuapp.com/user/refresh_token; samesite=none;secure;${expires};`;
             }
 
             setCookie("refreshtoken", data.refreshtoken, 7);
