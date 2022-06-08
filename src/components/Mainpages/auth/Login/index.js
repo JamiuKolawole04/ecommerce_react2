@@ -35,7 +35,7 @@ const Login = () => {
 
             localStorage.setItem("firstLogin", JSON.stringify(true));
 
-            // window.location.href = "/"
+            window.location.href = "/"
         } catch (err) {
             alert(err.response.data.msg)
         }
