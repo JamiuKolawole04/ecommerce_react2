@@ -17,21 +17,13 @@ const Register = () => {
         e.preventDefault()
 
         try {
-            const { data } = await axios({
+            await axios({
                 method: "post",
                 url: "/user/register",
-                data: { ...user }
+                data: { ...user },
+                withCredentials: true
             });
 
-
-            const setCookie = (cookieName, cookieValue, expirationDays) => {
-                let date = new Date();
-                date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
-                const expires = `expires=${date.toUTCString()}`;
-                document.cookie = `${cookieName}=${cookieValue}; path=/user/refresh_token; samesite=none;secure=true;${expires};`;
-            }
-
-            setCookie("refreshtoken", data.refreshtoken, 7);
 
             localStorage.setItem("firstLogin", JSON.stringify(true));
 
