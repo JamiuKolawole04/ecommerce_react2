@@ -19,7 +19,8 @@ const Login = () => {
             const { data } = await axios({
                 method: "post",
                 url: "/user/login",
-                data: { ...user }
+                data: { ...user },
+                withCredentials: true
             });
 
             console.log({ data })
