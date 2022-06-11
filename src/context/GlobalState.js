@@ -13,9 +13,7 @@ const DataProvider = ({ children }) => {
 
 
     useEffect(() => {
-        // const firstLogin = localStorage.getItem("firstLogin");
         const firstLogin = JSON.parse(localStorage.getItem("firstLogin"));
-        console.log(firstLogin);
 
         if (firstLogin) {
             const refreshToken = async () => {
